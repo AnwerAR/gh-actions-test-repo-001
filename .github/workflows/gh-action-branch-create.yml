@@ -1,4 +1,4 @@
-name: Test GH Action file
+name: Action on create Branch
 
 on:
   create:
