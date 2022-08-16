@@ -1,0 +1,14 @@
+name: Action on delete Branch
+
+on:
+  delete:
+
+jobs:
+  logs-on-console:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log 003
+        run: echo 'Leaving soon 😢'
+        
+      - name: Log 004
+        run: echo 'Good Bye 😭'
