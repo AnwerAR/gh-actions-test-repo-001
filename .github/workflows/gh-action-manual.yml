@@ -1,9 +1,9 @@
-name: Action on create Branch
+name: Manual action to test project
 
 on: [workflow_dispatch]
 
 jobs:
-  Test project:
+  Test-project:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
