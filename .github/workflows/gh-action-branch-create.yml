@@ -1,6 +1,7 @@
 name: Action on create Branch
 
 on:
+  workflow_dispatch:
   create:
 
 jobs:
