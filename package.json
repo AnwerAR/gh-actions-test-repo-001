@@ -1,0 +1,7 @@
+{
+    "name": "gh-actions-test-repo-001",
+    "version": "0.0.1",
+    "scripts": {
+        "test": "echo '🧪 All Test passed ✅'"
+    }
+}
