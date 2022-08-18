@@ -1,0 +1,17 @@
+name: Expressions test
+
+on: workflow_dispatch
+
+env:
+  myBoolean: ${{ false }}
+  myIntegerNumber: ${{ 711 }}
+
+jobs:
+  Test-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prints number value from env variable
+        run: echo "This is my number value ==> $myIntegerNumber"
+
+      - name: Prints boolean value from by accessing env using expression
+        run: echo "This is my boolean value ==> ${{ env.myBoolean }}"
