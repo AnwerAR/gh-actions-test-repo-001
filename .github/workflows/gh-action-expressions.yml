@@ -17,7 +17,7 @@ jobs:
         run: echo "This is my boolean value ==> ${{ env.myBoolean }}"
         
       - name: Skipped step
-        if: ${{ env.myBoolean }}
+        if: ${{ false }}
         run: echo "You will not see this message"
         
       - name: Using status check functions
