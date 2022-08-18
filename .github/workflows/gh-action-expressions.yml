@@ -12,6 +12,13 @@ jobs:
     steps:
       - name: Prints number value from env variable
         run: echo "This is my number value ==> $myIntegerNumber"
+        
+      - name: Skipped step
+        run: echo "You will not see this message"
+        if: ${{ env.myBoolean }}
 
-      - name: Prints boolean value from by accessing env using expression
+      - name: Env value accessed before execution
         run: echo "This is my boolean value ==> ${{ env.myBoolean }}"
+        
+      - name: Env value accessed at the time of execution
+        run: echo "This is my boolean value ==> ${{ $myBoolean }}"
