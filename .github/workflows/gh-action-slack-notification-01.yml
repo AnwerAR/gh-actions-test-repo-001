@@ -1,16 +1,31 @@
-name: Slack notification
+name: Slack notification with webhook
 
 on:
   workflow_dispatch:
   create:
 
 jobs:
-  Slack:
+  Slack-Webhook:
     runs-on: ubuntu-latest
-    steps:
-      - name: Slack Notification
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-        uses: pullreminders/slack-action@master
+    steps:  
+      - name: Send custom JSON data to Slack workflow
+        id: slack
+        uses: slackapi/slack-github-action@v1.23.0
         with:
-          args: '{\"channel\":\"C02G36J6X8C\",\"text\":\"Hello world\"}'
+          # For posting a rich message using Block Kit
+          payload: |
+            {
+              "text": "GitHub Action build result: ${{ job.status }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "GitHub Action build result: ${{ job.status }}"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
