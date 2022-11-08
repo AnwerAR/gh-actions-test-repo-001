@@ -270,6 +270,20 @@ jobs:
                     "type": "mrkdwn",
                     "text": "github.repository => ${{ github.repository }} \n github.repositoryUrl => ${{ github.repositoryUrl }}"
                   }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Hi <@D038NSC1NH1>, check this out"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Hi <!subteam^web-devs>, check this out"
+                  }
                 }
               ]
             }
