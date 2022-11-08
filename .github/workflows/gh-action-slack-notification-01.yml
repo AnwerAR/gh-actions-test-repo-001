@@ -2,7 +2,6 @@ name: Slack notification with webhook
 
 on:
   workflow_dispatch:
-  create:
 
 jobs:
   Slack-Webhook:
@@ -50,13 +49,6 @@ jobs:
                   "text": {
                     "type": "mrkdwn",
                     "text": "A line break after this? - - -"
-                  }
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "This is [A LINK](https://www.google.com/ 'Title') inline link"
                   }
                 },
                 {
