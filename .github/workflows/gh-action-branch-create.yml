@@ -2,7 +2,8 @@ name: Action on create Branch
 
 on:
   workflow_dispatch:
-  create:
+  # create:
+  delete:
 
 jobs:
   logs-on-console:
