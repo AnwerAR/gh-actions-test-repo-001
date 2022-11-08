@@ -19,7 +19,7 @@ jobs:
                 {
                   "type": "section",
                   "text": {
-                    "type": "text",
+                    "type": "mrkdwn",
                     "text": "Escaping text => AND(&amp;) less-than(&lt;) greater-than(&gt;)"
                   }
                 }
