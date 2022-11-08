@@ -1,4 +1,4 @@
-name: Slack notification with webhook
+name: Slack notification with webhook (Simplefied)
 
 on:
   workflow_dispatch:
