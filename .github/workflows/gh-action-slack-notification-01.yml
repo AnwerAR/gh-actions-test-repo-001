@@ -15,15 +15,263 @@ jobs:
           # For posting a rich message using Block Kit
           payload: |
             {
-              "text": "GitHub Action build result: ${{ job.status }}",
+              "text": "Main text of payload",
               "blocks": [
                 {
                   "type": "section",
                   "text": {
-                    "type": "mrkdwn",
-                    "text": "GitHub Action build result: ${{ job.status }}"
+                    "type": "text",
+                    "text": "Escaping text => AND(&amp;) less-than(&lt;) greater-than(&gt;)"
                   }
-                }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "# This is supposed to be an H1"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "List => - white - black-red \n- green \n-blue"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "> This is a blockquote"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "A line break after this? - - -"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "This is [A LINK](https://www.google.com/ 'Title') inline link"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*A bold text*"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Its a `code` block"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "![Alt text](https://i.ytimg.com/vi/6FJcWHamyNo/maxresdefault.jpg 'Optional title')"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "It will produce _italicized_ text"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "It will produce ~strikethrough~ text"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "This is unquoted text\n>This is quoted text\n>This is still quoted text\nThis is unquoted text again"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "This is a sentence with some `inline *code*` in it."
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "```This is a code block\nAnd it's multi-line```"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "This message contains a URL http://example.com/"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "This message contains a URL <http://example.com/>"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "It's Working 😄"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Hi <@webdevs>, check this out"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Hi <!webdevs>, check this out"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "<!date^1392734382^Posted {date_num} {time_secs}|Posted 2014-02-18 6:39:42 AM PST>"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "New Paid Time Off request from <example.com|Fred Enriquez>\n\n<https://example.com|View request>"
+                  }
+                },
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "New request"
+                  }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Type:*\nPaid Time Off"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Created by:*\n<example.com|Fred Enriquez>"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*When:*\nAug 10 - Aug 13"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "<https://example.com|View request>"
+                  }
+                },
+                {
+                  "type": "video",
+                  "title": {
+                    "type": "plain_text",
+                    "text": "How to use Slack.",
+                    "emoji": true
+                  },
+                  "title_url": "https://www.youtube.com/watch?v=RRxQQxiM7AA",
+                  "description": {
+                    "type": "plain_text",
+                    "text": "Slack is a new way to communicate with your team. It's faster, better organized and more secure than email.",
+                    "emoji": true
+                  },
+                  "video_url": "https://www.youtube.com/embed/RRxQQxiM7AA?feature=oembed&autoplay=1",
+                  "alt_text": "How to use Slack?",
+                  "thumbnail_url": "https://i.ytimg.com/vi/RRxQQxiM7AA/hqdefault.jpg",
+                  "author_name": "Arcado Buendia",
+                  "provider_name": "YouTube",
+                  "provider_icon_url": "https://a.slack-edge.com/80588/img/unfurl_icons/youtube.png"
+                },
+                {
+                  "type": "image",
+                  "title": {
+                    "type": "plain_text",
+                    "text": "Please enjoy this photo of a kitten"
+                  },
+                  "block_id": "image4",
+                  "image_url": "http://placekitten.com/500/500",
+                  "alt_text": "An incredibly cute kitten."
+                },
+                {
+                  "type": "divider"
+                },
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Budget Performance"
+                  }
+                },
+                {
+                  "type": "context",
+                  "elements": [
+                    {
+                      "type": "image",
+                      "image_url": "https://image.freepik.com/free-photo/red-drawing-pin_1156-445.jpg",
+                      "alt_text": "images"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "Location: **Dogpatch**"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "I think it's super cool",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "divider"
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "github.repository => ${{ github.repository }} \n github.repositoryUrl => ${{ github.repositoryUrl }}"
+                  }
+                },
               ]
             }
         env:
