@@ -139,14 +139,14 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Hi <@webdevs>, check this out"
+                    "text": "Hi <@web-devs>, check this out"
                   }
                 },
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Hi <!webdevs>, check this out"
+                    "text": "Hi <!web-devs>, check this out"
                   }
                 },
                 {
