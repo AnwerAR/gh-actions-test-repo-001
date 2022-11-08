@@ -34,7 +34,7 @@ jobs:
                       "text": "*Triggered by:*\n ${{ github.actor }}"
                     }
                   ]
-                },
+                }
               ]
             }
         env:
