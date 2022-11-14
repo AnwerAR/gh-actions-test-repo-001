@@ -11,5 +11,10 @@ jobs:
   test_schedule:
     runs-on: ubuntu-latest
     steps:
-      - name: Every time
-        run: echo "This step will always run"
+    - uses: slackapi/slack-github-action@v1.23.0
+      with:
+        # For posting a simple plain text message
+        slack-message: "A PR is open: ${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_FOOTER: "Payoneer's Github Actions"
