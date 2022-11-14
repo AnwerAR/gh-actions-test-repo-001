@@ -3,7 +3,6 @@ name: Cron test
 on:
   schedule:
     - cron: '* * * * *'
-    - cron: '1 * * * *'
 jobs:
   test_schedule:
     runs-on: ubuntu-latest
