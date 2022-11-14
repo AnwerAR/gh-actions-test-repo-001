@@ -19,6 +19,4 @@ jobs:
         # For posting a simple plain text message
         slack-message: "A PR is open: ${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
       env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-        SLACK_FOOTER: "Payoneer's Github Actions"
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
