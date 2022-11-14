@@ -2,9 +2,8 @@ name: Cron test
 
 on:
   schedule:
-    - cron: '30 5 * * 1,3'
-    - cron: '30 5 * * 2,4'
-    - cron: '*/1 * * * *'
+    - cron: '* * * * *'
+    - cron: '1 * * * *'
 jobs:
   test_schedule:
     runs-on: ubuntu-latest
