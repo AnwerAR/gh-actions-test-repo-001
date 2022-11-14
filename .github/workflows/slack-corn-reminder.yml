@@ -2,7 +2,6 @@ name: Cron test
 
 on:
   schedule:
-    - cron: '6 * * * *'
     - cron: '*/6 * * * *'
 
 jobs:
