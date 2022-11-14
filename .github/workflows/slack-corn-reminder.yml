@@ -1,48 +1,16 @@
-name: Slack notification with webhook (Simplified)
+name: Cron test
 
 on:
   schedule:
-    # Every weekday at 9-18 every hour, send notification
-    - cron: "*/1 * * * *"
-
+    - cron: '30 5 * * 1,3'
+    - cron: '30 5 * * 2,4'
+    - cron: '*/1 * * * *'
 jobs:
-  Slack-Webhook:
+  test_schedule:
     runs-on: ubuntu-latest
-    steps:  
-      - name: Send custom JSON data to Slack workflow
-        id: slack
-        uses: slackapi/slack-github-action@v1.23.0
-        with:
-          # For posting a rich message using Block Kit
-          payload: |
-            {
-              "blocks": [
-                {
-                  "type": "header",
-                  "text": {
-                    "type": "plain_text",
-                    "text": "An opened PR needs your attention"
-                  }
-                },
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Repository:*\n <${{ github.repositoryUrl }}|${{ github.repository }}>"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Triggered by:*\n ${{ github.actor }}"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Open PR:*\n ${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-                    }
-                  ]
-                }
-              ]
-            }
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+    steps:
+      - name: Not on Monday or Wednesday
+        if: github.event.schedule != '30 5 * * 1,3'
+        run: echo "This step will be skipped on Monday and Wednesday"
+      - name: Every time
+        run: echo "This step will always run"
