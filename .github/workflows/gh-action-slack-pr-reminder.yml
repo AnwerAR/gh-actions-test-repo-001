@@ -1,6 +1,7 @@
 name: PRs reviews reminder
 
 on:
+  workflow_dispatch:
   pull_request:
     types: [opened, reopened]
   schedule:
