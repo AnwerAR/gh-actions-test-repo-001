@@ -19,7 +19,6 @@ jobs:
           prNumber: ${{ steps.PR.outputs.number }}
           prUrl: ${{ steps.PR.outputs.pr_url }}
           prTitle: ${{ steps.PR.outputs.pr_title }}
-          prBody: ${{ steps.PR.outputs.pr_body }}
           prCreatedAt: ${{ steps.PR.outputs.pr_created_at }}
           prMergedAt: ${{ steps.PR.outputs.pr_merged_at }}
           prClosedAt: ${{ steps.PR.outputs.pr_closed_at }}
