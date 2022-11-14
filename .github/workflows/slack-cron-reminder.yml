@@ -15,6 +15,31 @@ jobs:
       with:
         # For posting a simple plain text message
         slack-message: "A PR is open: ${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+        payload: |
+            {
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "An open PR needs your attention"
+                  }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*A PR is opened:*\n <${{ github.event.pull_request.html_url || github.event.head_commit.url }}>"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Triggered by:*\n ${{ github.actor }}"
+                    }
+                  ]
+                }
+              ]
+            }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
