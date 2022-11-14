@@ -9,8 +9,6 @@ jobs:
   test_schedule:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "PR ${prNumber} ${prTitle} at ${prUrl} is ${prJSON}"
-        # if: steps.PR.outcome == 'success'
         env:
           # JSON object with the full PR object
           # toJSON(fromJSON(...pr)) parses it into memory and then format is with pretty-print.
@@ -24,5 +22,6 @@ jobs:
           prClosedAt: ${{ steps.PR.outputs.pr_closed_at }}
           prLabel: ${{ steps.PR.outputs.pr_labels }}
         run: |
+            echo "PR ${prNumber} ${prTitle} at ${prUrl} is ${prJSON}"
             echo "prJSON ${{ toJSON(fromJSON(steps.current_pr.outputs.pr)) }}"
             echo "prCreatedAt ${{ steps.PR.outputs.pr_created_at }}"
