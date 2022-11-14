@@ -1,9 +1,6 @@
 name: Slack notification with webhook (Simplified)
 
 on:
-  workflow_dispatch:
-  pull_request:
-    types: [opened, reopened]
   schedule:
     # Every weekday at 9-18 every hour, send notification
     - cron: "*/1 * * * *"
